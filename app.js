@@ -35,7 +35,7 @@ app.post('/api/login',(req,res)=>{
     email:'m@babashov.info'
   }
 
-  jwt.sign({user},'secret',(err,token)=>{
+  jwt.sign({user},'secret',{expiresIn:'30s'},(err,token)=>{
     if(err)
     {
       console.log(`Error: ${err}`);
